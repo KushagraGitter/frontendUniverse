@@ -4,11 +4,10 @@ import { SITE_TITLE } from '../config';
 ---
 
 <header>
-	<h2>
+	<h2 class='header-title'>
 		{SITE_TITLE}
 	</h2>
 	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink>
 		<HeaderLink href="https://twitter.com/iamkushagraraj" target="_blank">Twitter</HeaderLink>
@@ -21,5 +20,11 @@ import { SITE_TITLE } from '../config';
 	}
 	h2 {
 		margin: 0.5em 0;
+	}
+	.header-title {
+	background: radial-gradient(#e91e63,#ffeb3b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	font-size: 2rem;
 	}
 </style>
