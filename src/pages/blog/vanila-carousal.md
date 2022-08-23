@@ -1,25 +1,25 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Vanila JavaScript Carousal"
-description: "Lets build Valila JavaScript Carousal"
+title: "Vanilla JavaScript Carousel"
+description: "Lets build Vanilla JavaScript Carousel"
 pubDate: "Aug 23 2022"
-heroImage: "/assets/carousal-hero.png"
+heroImage: "/assets/Carousel-hero.png"
 ---
 
-Let'd build a Carausal, its a very common pattern used in all the web applications.
+Let'd build a Carousel, its a very common pattern used in all the web applications.
 
-So to get started we need to have a list of elements which we want our carousal to have to slide over, we also need to add 2 buttons for left and right navigation
+So to get started we need to have a list of elements which we want our Carousel to have to slide over, we also need to add 2 buttons for left and right navigation
 
 below is the html for adding the list of images
 
 ```html
 <div id="app">
   <section>
-    <div class="carousal" data-carousal>
-       <button class="carousal-button left" data-carousal-button="prev">
+    <div class="Carousel" data-Carousel>
+       <button class="Carousel-button left" data-Carousel-button="prev">
         <
       </button>
-      <button class="carousal-button right" data-carousal-button="next">
+      <button class="Carousel-button right" data-Carousel-button="next">
         >
       </button>
       <ul class="slides" data-slides>
@@ -61,13 +61,13 @@ body {
   margin: 0;
 }
 
-.carousal {
+.Carousel {
   position: relative;
   height: 100vh;
   width: 100vw;
 }
 
-.carousal button {
+.Carousel button {
   font-size: 2rem;
   position: absolute;
   z-index: 9999;
@@ -75,31 +75,31 @@ body {
   transform: translateY(-50%);
 }
 
-.carousal-button {
+.Carousel-button {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(0, 0, 0, 0.2);
   outline: none;
   border: none;
 }
 
-.carousal-button:hover,
-.carousal-button:focus {
+.Carousel-button:hover,
+.Carousel-button:focus {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.carousal-button:focus {
+.Carousel-button:focus {
   outline: solid black;
 }
 
-.carousal-button.left {
+.Carousel-button.left {
   left: 1rem;
 }
 
-.carousal-button.right {
+.Carousel-button.right {
   right: 1rem;
 }
 
-.carousal > ul {
+.Carousel > ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -137,13 +137,13 @@ below is the JS
 // Import stylesheets
 import './style.css';
 
-const carousalButtons = document.querySelectorAll('[data-carousal-button]');
+const CarouselButtons = document.querySelectorAll('[data-Carousel-button]');
 
-carousalButtons.forEach((button) => {
+CarouselButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    const offSet = button.dataset.carousalButton === 'prev' ? -1 : 1;
+    const offSet = button.dataset.CarouselButton === 'prev' ? -1 : 1;
     const slides = button
-      .closest('[data-carousal]')
+      .closest('[data-Carousel]')
       .querySelector('[data-slides]');
 
     const activeSlide = slides.querySelector('[data-active]');
