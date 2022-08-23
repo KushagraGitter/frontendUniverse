@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Vanila JavaScript Carousal"
 description: "Lets build Valila JavaScript Carousal"
 pubDate: "Aug 23 2022"
-heroImage: "https://miro.medium.com/max/620/1*KNLpvu2fijlesXzIdyS1Jw.jpeg"
+heroImage: "/assets/carousal-hero.png"
 ---
 
 Let'd build a Carausal, its a very common pattern used in all the web applications.
