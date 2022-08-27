@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/serverless';
 
 import sitemap from '@astrojs/sitemap';
@@ -8,5 +9,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://example.com',
   output: 'server',
-  integrations: [mdx(), sitemap(), vercel()],
+  integrations: [mdx(), sitemap(), vercel(), react()],
 });
