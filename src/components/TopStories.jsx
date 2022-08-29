@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 
 const TopStories = () => {
   const [topStoriesId, setTopStoriesId] = useState([]);
@@ -22,8 +22,13 @@ const TopStories = () => {
   return (
     <div>
       <h1>Top Stories</h1>
+
       {topStoriesId.map((storyId) => {
-        return <Story key={storyId} storyId={storyId} />;
+        return (
+          <Suspense fallback="..loading">
+            <Story key={storyId} storyId={storyId} />{' '}
+          </Suspense>
+        );
       })}
     </div>
   );
