@@ -4,6 +4,23 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
   import TopStories from '../components/TopStories.jsx';
+
+
+   const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': 'MVw12zV5uwmshYeti4bHcL5FK4JPp11OLgvjsnnpXNFwvrknGP',
+        'X-RapidAPI-Host': 'community-hacker-news-v1.p.rapidapi.com',
+      },
+    };
+
+  const topStories = await fetch(
+      'https://community-hacker-news-v1.p.rapidapi.com/topstories.json?print=pretty',
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => response)
+      .catch((err) => console.error(err));   
 --- 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +32,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
   <main>
     <content>
   <div>
-    <TopStories client:visible/>
+    <TopStories client:visible topStories = {topStories}/>
   </div>
     </content>
   </main>
