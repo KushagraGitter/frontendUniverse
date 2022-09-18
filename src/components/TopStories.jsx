@@ -5,6 +5,7 @@ const TopStories = ({ topStories }) => {
   return (
     <div>
       <h1>Top Stories</h1>
+
       {topStories.map((storyId) => {
         return <Story key={storyId} storyId={storyId} />;
       })}

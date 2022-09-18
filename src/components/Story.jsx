@@ -6,11 +6,11 @@ const Story = ({ storyId }) => {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'MVw12zV5uwmshYeti4bHcL5FK4JPp11OLgvjsnnpXNFwvrknGP',
-        'X-RapidAPI-Host': 'community-hacker-news-v1.p.rapidapi.com',
+        'X-RapidAPI-Key': `MVw12zV5uwmshYeti4bHcL5FK4JPp11OLgvjsnnpXNFwvrknGP`,
+        'X-RapidAPI-Host': `community-hacker-news-v1.p.rapidapi.com`,
       },
     };
-
+    console.log(options);
     fetch(
       `https://community-hacker-news-v1.p.rapidapi.com/item/${storyId}.json?print=pretty`,
       options
