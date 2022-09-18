@@ -9,6 +9,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://example.com',
   output: 'server',
-  adapter: vercel(),
   integrations: [mdx(), sitemap(), vercel(), react()],
 });
