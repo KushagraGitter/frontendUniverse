@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Story from './Story';
 
-const TopStories = ({ topStories }) => {
+const TopStories = ({ topStories = [] }) => {
   return (
     <div>
       <h1>Top Stories</h1>
