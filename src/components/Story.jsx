@@ -20,7 +20,7 @@ const Story = ({ storyId }) => {
       .catch((err) => console.error(err));
   }, [storyId]);
   return (
-    <p>
+    <p className="any">
       <a href={story.url} target="_blank">
         {story.title}
       </a>
